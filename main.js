@@ -25,7 +25,7 @@ async function loadEMPDataFromAPI() {
       addressWorker.postMessage(json);
     });
   addressWorker.onmessage = function (addresses) {
-    cacheData("Addresses", addresses, false);
+    cacheData("Addresses", JSON.stringify(addresses.data), false);
   };
 }
 
